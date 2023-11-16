@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: linebot
+    tty: true
+    ports:
+      - 8000:5000
+    environment:
+        FLASK_DEBUG: 1    #デバッグモードON
+        FLASK_APP:  "app.py"        #app.pyを起動
+        FLASK_RUN_HOST: 0.0.0.0     #HOSTの設定
+        YOUR_CHANNEL_ACCESS_TOKEN: jubDFkDLGRisldAzrnDMhvGr+duz9+BFHfnQhJiisioAviB2kr6NadAfCJ0yQoP+7/sWz/5llLiv6HovRpwV2+g9pyhLPNeyvB8G5Thz9WXmZRFJ0pV31ph/tMow/W7bvbXb89lWNV0M3WOOOfG44QdB04t89/1O/w1cDnyilFU=
+        YOUR_CHANNEL_SECRET: 468831d68854c2928eff6b8678faab21
+    volumes:
+      - ./:/code/
